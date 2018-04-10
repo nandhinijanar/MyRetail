@@ -14,7 +14,7 @@ MyRetail is a microservice that provides following abilities to the client,
 ## Technologies Used
 
 1. Spring Boot - REST service
-2. Cassandra - backend
+2. Cassandra - NoSQL Data storage
 3. Swagger-UI - Api documentation
 4. Gradle - Build
 

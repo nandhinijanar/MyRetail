@@ -58,7 +58,7 @@ public class ProductController {
      * @return Updated Product Information
      */
     @RequestMapping(value = "/v1/products/{id}", method = RequestMethod.PUT ,produces = MediaType.APPLICATION_JSON_VALUE)
-    @ApiOperation(value = "Get the product name and price information for product ID")
+    @ApiOperation(value = "Modify Product price information for product ID")
     @ApiImplicitParams({
             @ApiImplicitParam(name = "id", value = "Product ID for which the Product Information is requested",dataType = "integer", paramType = "path")
     })
