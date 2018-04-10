@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
- * TODO
+ * DTO to store Current price of the Product and mapping to DB
  */
 @Table(value = "product_price")
 public class Price {

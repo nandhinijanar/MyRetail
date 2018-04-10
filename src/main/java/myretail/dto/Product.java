@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 /**
- * TODO
+ * DTO for the Product Information
  */
 public class Product {
 

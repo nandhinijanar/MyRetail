@@ -32,9 +32,9 @@ public class RedskyClientHandler {
     MyRetailProperties myRetailProperties;
 
     /**
-     * TODO
+     * Gets the product name for the product ID by calling the Redsky client
      * @param productID
-     * @return
+     * @return Product Name
      */
     public String getProductName(Integer productID) {
 

@@ -5,7 +5,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Configuration;
 
 /**
- * TODO
+ * Configuration to retrive the properties from application.properties
+ *
  */
 @Configuration
 @EnableConfigurationProperties

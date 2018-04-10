@@ -31,9 +31,9 @@ public class ProductController {
     ProductProcessor productProcessor;
 
     /**
-     * TODO
+     * Return Product Information for the product ID specified in the url
      * @param productID
-     * @return
+     * @return Product Information as JSON
      */
     @RequestMapping(value = "/v1/products/{id}", method = RequestMethod.GET ,produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Get the product name and price information for product ID")
@@ -51,11 +51,11 @@ public class ProductController {
         return productProcessor.getProductDataForID(productID);
     }
 
-    /** TODO
-     *
+    /**
+     * Modify the Price information of a product using Product ID and Request JSON
      * @param productID
-     * @param productInfo
-     * @return
+     * @param productRequest
+     * @return Updated Product Information
      */
     @RequestMapping(value = "/v1/products/{id}", method = RequestMethod.PUT ,produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Get the product name and price information for product ID")
@@ -67,9 +67,9 @@ public class ProductController {
             @ApiResponse(code = 400, message = "Validation Error - Bad request"),
             @ApiResponse(code = 404, message = "Product Information not found for given Product ID")
     })
-    public Product updateProductPrice(@PathVariable("id") Integer productID, @Valid @RequestBody Product productInfo) {
+    public Product updateProductPrice(@PathVariable("id") Integer productID, @Valid @RequestBody Product productRequest) {
 
-        return productProcessor.updateProductPrice(productID, productInfo);
+        return productProcessor.updateProductPrice(productID, productRequest);
     }
 
     @ExceptionHandler
