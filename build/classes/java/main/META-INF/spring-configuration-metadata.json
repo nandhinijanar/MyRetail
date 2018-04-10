@@ -1,0 +1,17 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "myretail.dto.MyRetailProperties",
+      "name": "",
+      "type": "myretail.dto.MyRetailProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "myretail.dto.MyRetailProperties",
+      "name": "redsky-client-endpoint",
+      "type": "java.lang.String"
+    }
+  ]
+}

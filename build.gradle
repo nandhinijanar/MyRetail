@@ -1,0 +1,57 @@
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.1.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+jar {
+    baseName = 'MyRetail'
+    version =  '0.0.1'
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation('org.springframework.boot:spring-boot-configuration-processor')
+    implementation 'io.springfox:springfox-swagger2:2.8.0'
+    implementation 'io.springfox:springfox-swagger-ui:2.8.0'
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+    implementation 'org.springframework.boot:spring-boot-starter-data-cassandra'
+    implementation group: 'org.hectorclient', name: 'hector-core', version: '2.0-0'
+    testImplementation group: 'org.springframework.cloud', name: 'spring-cloud-contract-wiremock', version: '1.2.4.RELEASE'
+    testImplementation 'junit:junit:4.12'
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '2.18.0'
+    testImplementation group: 'org.powermock', name: 'powermock-module-junit4', version: '1.7.3'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation (group: 'org.cassandraunit', name: 'cassandra-unit-spring', version: '3.3.0.2') {
+        exclude module : 'cassandra-unit'
+    }
+    testImplementation group: 'org.cassandraunit', name: 'cassandra-unit-shaded', version: '3.3.0.2'
+}
+
+//setting ignore failures to false - build fails if test case fails
+test {
+    systemProperties 'property': 'value'
+    ignoreFailures false
+}

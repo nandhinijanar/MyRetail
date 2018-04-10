@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.tomakehurst:wiremock-standalone:2.15.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.tomakehurst/wiremock-standalone/2.15.0/b400cbe16c30d100acb29e15070a836704ccf5f7/wiremock-standalone-2.15.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.tomakehurst/wiremock-standalone/2.15.0/7260d59d6eff4a327d0ac194406953dff4a228ca/wiremock-standalone-2.15.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
