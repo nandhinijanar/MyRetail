@@ -63,7 +63,11 @@ public class RedskyClientHandler {
                 throw new ClientServiceException(String.format("Exception - Redsky Client returned status : %d", productResponse.getStatusCode().value()));
             }
         } catch (HttpClientErrorException e) {
-            throw new ClientServiceException(String.format("Exception in calling Redsky Client - %s", e.getMessage()));
+            if(e.getStatusCode().equals(HttpStatus.NOT_FOUND)) {
+                throw new NotFoundException("Product Information is unavailable for Product ID - " + productID);
+            } else {
+                throw new ClientServiceException(String.format("Exception in calling Redsky Client - %s", e.getMessage()));
+            }
         }
 
         return null;
