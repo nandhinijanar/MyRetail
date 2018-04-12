@@ -74,9 +74,9 @@ public class ProductController {
 
     @ExceptionHandler
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public String handleNotFoundException(NotFoundException e) {
+    public ResponseEntity<ErrorDTO> handleNotFoundException(NotFoundException e) {
         logger.error(String.format("Not Found Exception in ProductController - %s", e.getMessage()));
-        return e.getMessage();
+        return new ResponseEntity<ErrorDTO>(new ErrorDTO(e.getMessage()), HttpStatus.NOT_FOUND );
     }
 
     @ExceptionHandler
